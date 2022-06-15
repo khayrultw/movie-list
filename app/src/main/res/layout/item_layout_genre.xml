@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/light_gray"
+        app:cardCornerRadius="@dimen/xxxxs"
+        app:cardElevation="0dp">
+
+        <TextView
+            android:id="@+id/tvGenre"
+            android:layout_marginHorizontal="@dimen/xxs"
+            android:layout_marginVertical="@dimen/xxxxs"
+            style="@style/MovieList.Text.Regular.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"/>
+
+    </androidx.cardview.widget.CardView>
+</layout>

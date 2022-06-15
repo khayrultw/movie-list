@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MovieList.TextAppearance" parent="">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="MovieList.TextAppearance.Medium" parent="">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Loader" parent="android:Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="MovieList.Text.Regular.Base" parent="">
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="MovieList.Text.Bold.Base" parent="">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MovieList.Text.Title" parent="">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="MovieList.Text.Regular.Small" parent="MovieList.Text.Regular.Base">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="MovieList.Text.Regular.Medium" parent="MovieList.Text.Regular.Base">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MovieList.Text.Regular.Large" parent="MovieList.Text.Regular.Base">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MovieList.Text.Regular.ExtraLarge" parent="MovieList.Text.Regular.Base">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="MovieList.Text.Bold.Small" parent="MovieList.Text.Bold.Base">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="MovieList.Text.Bold.Medium" parent="MovieList.Text.Bold.Base">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MovieList.Text.Bold.Large" parent="MovieList.Text.Bold.Base">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MovieList.Text.Bold.ExtraLarge" parent="MovieList.Text.Bold.Base">
+        <item name="android:textSize">20sp</item>
+    </style>
+</resources>

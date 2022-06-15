@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.khayrultw.movielist.ui.presentations.movies.viewModel.MoviesViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:titleTextAppearance="@style/MovieList.Text.Regular.Large"
+                    app:title="@string/app_name"
+                    app:titleCentered="true"
+                    android:elevation="0dp"
+                    app:titleTextColor="@color/black" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/xxs"
+                    android:layout_marginBottom="@dimen/xxs"
+                    app:startIconDrawable="@drawable/ic_search"
+                    app:endIconDrawable="@drawable/ic_clear"
+                    app:endIconTint="@color/gray"
+                    android:switchTextAppearance="@style/MovieList.TextAppearance"
+                    app:endIconMode="clear_text"
+                    app:hintEnabled="false"
+                    android:padding="0dp"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionSearch"
+                        android:padding="@dimen/xxs"
+                        android:singleLine="true"
+                        android:drawablePadding="-12dp"
+                        style="@style/MovieList.Text.Regular.Small"
+                        android:hint="@string/search"
+                        android:background="@drawable/rounded_edittext" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/srlMovies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:id="@+id/ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="@{viewModel.emptyScreen ? View.VISIBLE : View.GONE}"
+                        android:layout_marginBottom="@dimen/xxxxxl">
+
+                        <ImageView
+                            android:layout_width="@dimen/image_full_width"
+                            android:layout_height="@dimen/image_full_width"
+                            android:src="@drawable/ic_search_image"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_movie_found"
+                            style="@style/MovieList.Text.Regular.Large"/>
+
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvMovies"
+                        android:visibility="@{viewModel.emptyScreen ? View.GONE : View.VISIBLE}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/s"
+                        android:clipToPadding="false"/>
+                </FrameLayout>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

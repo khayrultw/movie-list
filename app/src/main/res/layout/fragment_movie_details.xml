@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.khayrultw.movielist.ui.presentations.movieDetails.viewModel.MovieDetailsViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPoster"
+                    android:layout_width="@dimen/image_full_width"
+                    android:layout_height="@dimen/image_full_height"
+                    android:layout_margin="@dimen/xxs"
+                    android:background="@color/divider"
+                    android:scaleType="fitXY" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/m">
+
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        style="@style/MovieList.Text.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/xxs"
+                        android:text="@string/title"
+                        android:textAlignment="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/MovieList.Text.Regular.Large"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginBottom="@dimen/xxs"
+                            android:layout_weight="1"
+                            android:text="@string/overview" />
+
+                        <TextView
+                            android:id="@+id/tvRating"
+                            style="@style/MovieList.Text.Regular.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/xxxxs"
+                            android:text="4.5" />
+
+                        <RatingBar
+                            android:id="@+id/rbMovieRating"
+                            style="@style/Widget.AppCompat.RatingBar.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:progressTint="@color/golden"
+                            android:rating="4.5" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tvOverView"
+                        style="@style/MovieList.Text.Regular.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/overview" />
+
+                    <TextView
+                        style="@style/MovieList.Text.Regular.Large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginBottom="@dimen/xxs"
+                        android:text="@string/genre"
+                        android:layout_marginTop="@dimen/m"/>
+
+                    <com.google.android.flexbox.FlexboxLayout
+                        android:id="@+id/flGenreContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dividerDrawable="@drawable/flex_item_divider"
+                        app:showDivider="middle"
+                        app:flexWrap="wrap" />
+
+                    <TextView
+                        style="@style/MovieList.Text.Regular.Large"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/m"
+                        android:layout_marginBottom="@dimen/xxs"
+                        android:text="@string/release_date" />
+
+                    <TextView
+                        android:id="@+id/tvDate"
+                        style="@style/MovieList.Text.Regular.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/xxs"
+                        android:text="@string/overview" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
